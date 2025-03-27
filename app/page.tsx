@@ -4,17 +4,84 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function Home() {
+
+  const artists = [
+    {
+      image: 'https://th.bing.com/th/id/OIP.cfMQtxPpu09v3uhKNXvM9wHaI-?rs=1&pid=ImgDetMain',
+      name: 'Pintor 1',
+      description: 'Especialista en acuarelas abstractas y técnicas mixtas.'
+    },
+    {
+      image: 'https://th.bing.com/th/id/R.51163f4da81941992aed8391ad1ed3bb?rik=HyNrD9Fudti0qA&pid=ImgRaw&r=0',
+      name: 'Pintor 2',
+      description: 'Especialista en acuarelas abstractas y técnicas mixtas.'
+    },
+    {
+      image: 'https://th.bing.com/th/id/R.5e14d6f099e1f0f1e6f6951f0a24f9f5?rik=Nom1mr%2f2BNA%2bMQ&pid=ImgRaw&r=0',
+      name: 'Pintor 3',
+      description: 'Especialista en acuarelas abstractas y técnicas mixtas.'
+    }
+  ]
+
+  const gallery = [
+    {
+      id: 1,
+      image: 'https://th.bing.com/th/id/OIP.kZYQ9QYG6mA8F9tl8gZajwHaFV?rs=1&pid=ImgDetMain',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 2,
+      image: 'https://encolombia.com/wp-content/uploads/2012/11/Pintura-Abstracta.jpg',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 3,
+      image: 'https://www.gmarticeballosart.com/wp-content/uploads/2017/10/abstraccion_50x65ap17br.jpg',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 4,
+      image: 'https://i.pinimg.com/originals/cf/a7/d8/cfa7d84f6fea7f230a0489aca4eb6bb4.jpg',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 5,
+      image: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/dcd4ba10514655.560e624412a88.jpg',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 6,
+      image: 'https://images.pexels.com/photos/15947794/pexels-photo-15947794/free-photo-of-arte-pintura-pintando-cuadro.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 7,
+      image: 'https://acrilicofluido.com/wp-content/uploads/2020/03/2013_NYR_02788_0039_000wassily_kandinsky_schwarz_und_violett-1536x1256.jpg',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+    {
+      id: 8,
+      image: 'https://definicion.de/wp-content/uploads/2011/05/pintura-abstracta.jpg',
+      title: 'Titulo',
+      description: 'Descripcion'
+    },
+  ]
   return (
     <div>
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/placeholder.svg?height=1080&width=1920"
+          <img
+            src="/hero.jpg"
             alt="Taller de artistas"
-            fill
-            className="object-cover"
-            priority
+            className="object-fill w-full h-full"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -60,19 +127,18 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((artist) => (
-              <Card key={artist} className="overflow-hidden border-none shadow-md">
+            {artists.map((artist) => (
+              <Card key={artist.name} className="overflow-hidden border-none shadow-md">
                 <div className="relative h-80">
-                  <Image
-                    src={`/placeholder.svg?height=600&width=400&text=Artista ${artist}`}
-                    alt={`Artista ${artist}`}
-                    fill
-                    className="object-cover"
+                  <img
+                    src={artist.image}
+                    alt={artist.name}
+                    className="object-cover w-full h-full"
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="font-playfair text-xl font-bold mb-2">Nombre del Artista {artist}</h3>
-                  <p className="text-gray-600 mb-4">Especialista en acuarelas abstractas y técnicas mixtas.</p>
+                  <h3 className="font-playfair text-xl font-bold mb-2">{artist.name}</h3>
+                  <p className="text-gray-600 mb-4">{artist.description}</p>
                   <Link
                     href="/semana-a-semana"
                     className="text-[#2D3E50] font-medium hover:text-[#D4AF37] transition-colors"
@@ -94,18 +160,17 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <div key={item} className="relative group overflow-hidden rounded-md aspect-square">
-                <Image
-                  src={`/placeholder.svg?height=400&width=400&text=Obra ${item}`}
-                  alt={`Obra de arte ${item}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+            {gallery.map((item) => (
+              <div key={item.id} className="relative group overflow-hidden rounded-md aspect-square">
+                <img
+                  src={item.image}
+                  alt={`Obra de arte ${item.title}`}
+                  className="object-cover transition-transform duration-300 group-hover:scale-110 w-full h-full"
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="text-white text-center p-4">
-                    <h3 className="font-playfair text-lg font-bold">Título de la Obra</h3>
-                    <p className="text-sm mt-1">Técnica mixta sobre lienzo</p>
+                    <h3 className="font-playfair text-lg font-bold">{item.title}</h3>
+                    <p className="text-sm mt-1">{item.description}</p>
                   </div>
                 </div>
               </div>
@@ -132,7 +197,7 @@ export default function Home() {
               <Card key={testimonial} className="bg-white p-6 shadow-sm border border-gray-100">
                 <CardContent className="p-0">
                   <div className="flex items-center mb-4">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 hidden">
                       <Image
                         src={`/placeholder.svg?height=100&width=100&text=Cliente`}
                         alt="Cliente"

@@ -12,7 +12,7 @@ export default function NoticiasTips() {
       title: "Cómo elegir el cuadro perfecto para tu espacio",
       excerpt:
         "Descubre las claves para seleccionar la obra de arte ideal según las características de tu espacio, la iluminación y tu estilo personal.",
-      image: "/placeholder.svg?height=600&width=1200&text=Elegir+Cuadro",
+      image: "https://th.bing.com/th/id/OIP.Snv3FJg5pU34z0lQrERmpwAAAA?rs=1&pid=ImgDetMain",
       date: "15 de marzo, 2024",
       readTime: "5 min",
       author: "María González",
@@ -23,7 +23,7 @@ export default function NoticiasTips() {
       title: "Entrevista con Javier Méndez, artista colaborador",
       excerpt:
         "Conoce la trayectoria y proceso creativo de uno de nuestros artistas más destacados, especializado en paisajes urbanos contemporáneos.",
-      image: "/placeholder.svg?height=600&width=1200&text=Entrevista",
+      image: "https://th.bing.com/th/id/OIP.rdiQTMTKekczbXOmzMmlDQHaDt?rs=1&pid=ImgDetMain",
       date: "8 de marzo, 2024",
       readTime: "8 min",
       author: "Carlos Ruiz",
@@ -34,7 +34,7 @@ export default function NoticiasTips() {
       title: "Evento: Taller de arte personalizado gratuito",
       excerpt:
         "Te invitamos a participar en nuestro taller gratuito donde aprenderás técnicas básicas para personalizar tus propias obras de arte.",
-      image: "/placeholder.svg?height=600&width=1200&text=Taller",
+      image: "https://th.bing.com/th/id/OIP.nTqkOti5HxHmwY5KDvS8rgHaE6?rs=1&pid=ImgDetMain",
       date: "20 de marzo, 2024",
       readTime: "3 min",
       author: "Equipo Arte a Medida",
@@ -45,7 +45,7 @@ export default function NoticiasTips() {
       title: "Las 5 tendencias en arte para el hogar en 2024",
       excerpt:
         "Analizamos las principales tendencias en arte decorativo para este año, desde los colores de moda hasta los estilos más demandados.",
-      image: "/placeholder.svg?height=600&width=1200&text=Tendencias",
+      image: "https://th.bing.com/th/id/OIP.i1Kq9Tr2kHxAdpwLwXz03AHaHa?rs=1&pid=ImgDetMain",
       date: "1 de marzo, 2024",
       readTime: "6 min",
       author: "Laura Sánchez",
@@ -56,7 +56,7 @@ export default function NoticiasTips() {
       title: "Guía para cuidar y preservar tus obras de arte",
       excerpt:
         "Consejos prácticos para mantener tus cuadros en perfecto estado, protegerlos de la luz solar y limpiarlos adecuadamente.",
-      image: "/placeholder.svg?height=600&width=1200&text=Cuidado",
+      image: "https://th.bing.com/th/id/OIP.L4jYftCglst-MwppObP47wAAAA?rs=1&pid=ImgDetMain",
       date: "25 de febrero, 2024",
       readTime: "7 min",
       author: "Antonio Vega",
@@ -67,12 +67,12 @@ export default function NoticiasTips() {
       title: "Arte personalizado como regalo: ideas originales",
       excerpt:
         "Descubre por qué el arte personalizado se ha convertido en uno de los regalos más significativos y cómo elegir la pieza perfecta.",
-      image: "/placeholder.svg?height=600&width=1200&text=Regalo",
+      image: "https://th.bing.com/th/id/R.9746dc5369edec1791a77c162ff96940?rik=MMhOEAFmg0yAzQ&pid=ImgRaw&r=0",
       date: "18 de febrero, 2024",
       readTime: "5 min",
       author: "Elena Martín",
       category: "Ideas y Consejos",
-    },
+    }
   ]
 
   return (
@@ -90,7 +90,7 @@ export default function NoticiasTips() {
           {articles.map((article) => (
             <Card key={article.id} className="overflow-hidden border-none shadow-md">
               <div className="relative h-48 md:h-56">
-                <Image src={article.image || "/placeholder.svg"} alt={article.title} fill className="object-cover" />
+                <img src={article.image || "/placeholder.svg"} alt={article.title} className="object-cover w-full h-full" />
                 <div className="absolute top-4 left-4 bg-[#D4AF37] text-white text-sm font-medium py-1 px-3 rounded-full">
                   {article.category}
                 </div>
